@@ -1,0 +1,12 @@
+0 * * * * /home/pi/scripts/connect.py
+0 */5 * * * mount -a
+
+
+#Other version
+
+0 12 * * * python3 ~/scripts/forcedisconnect.py
+1 12 * * * sudo bash ~/scripts/stop_gsm.sh
+0 0 * * * sudo /sbin/shutdown -r now
+
+@reboot sudo bash ~/scripts/start_gsm.sh
+@reboot sleep 120 && python3 ~/scripts/connect.py

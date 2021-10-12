@@ -1,0 +1,15 @@
+[Unit]
+Description=Configure GSM HAT and DHCP for IP Address
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/pi/apms/scripts
+User=pi
+Group=pi
+Type=idle
+ExecStartPre=/bin/sleep 30
+ExecStart=bash /home/pi/apms/scripts/start_gsm.sh 
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Start AutoSSH Tunnel to Justin's Relay
+Wants=setupgsm.service
+After=setupgsm.service
+
+[Service]
+WorkingDirectory=/home/pi/apms/scripts
+User=pi
+Group=pi
+ExecStartPre=/bin/sleep 60
+ExecStart=/usr/bin/python3 /home/pi/apms/scripts/connect.py
+
+[Install]
+WantedBy=multi-user.target
