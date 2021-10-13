@@ -1,6 +1,6 @@
 # APMS Source Code
 
-This code repository contains all the software required to operate an Automated Penguin Monitoring
+This code repository contains all the software required to operate an Automated Penguin Monitoring 
 System, including an installation script.
 
 ## Contents
