@@ -29,8 +29,8 @@ class scale(threading.Thread):
         self.threshold = tc.weight_threshold
         self.on_scale = False
         self.off_scale_count = 0
-		self.num_bins = 500
-		self.num_below_threshold = 50
+        self.num_bins = 500
+        self.num_below_threshold = 50
 
         self.increment = (self.max_weight-self.min_weight)/self.num_bins
 
@@ -53,14 +53,13 @@ class scale(threading.Thread):
     def run(self):
 
         while self.running:
-			value[2] = value[1]
-			value[1] = value[0]
+            value[2] = value[1]
+            value[1] = value[0]
             value[0] = self.read_scale()
-			
-			sum = 0
-			for i in value:
-				if i > self.threshold:
-					sum += 1
+            sum = 0
+            for i in value:
+                if i > self.threshold:
+				    sum += 1
 
             if (sum > 1) and (not self.on_scale):
 
@@ -68,8 +67,8 @@ class scale(threading.Thread):
                 print("Animal on scale")
                 self.raw_readings = []
                 self.off_scale_count = 0
-				self.assign_bin(value[2])
-				self.assign_bin(value[1])
+                self.assign_bin(value[2])
+                self.assign_bin(value[1])
 				
 
             if self.on_scale:
