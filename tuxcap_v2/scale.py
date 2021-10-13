@@ -27,7 +27,7 @@ class scale(threading.Thread):
         self.max_weight = 5
 
         self.threshold = tc.weight_threshold
-		self.calibration_factor = tc.calibration_factor
+        self.calibration_factor = tc.calibration_factor
         self.on_scale = False
         self.off_scale_count = 0
         self.num_bins = 500
