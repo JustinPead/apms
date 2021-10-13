@@ -59,7 +59,7 @@ class scale(threading.Thread):
             sum = 0
             for i in value:
                 if i > self.threshold:
-				    sum += 1
+                    sum += 1
 
             if (sum > 1) and (not self.on_scale):
 
