@@ -120,7 +120,6 @@ class scale(threading.Thread):
         return False
 
 
-
     def reset_bins(self):
 
         self.weigh_bins=[]
