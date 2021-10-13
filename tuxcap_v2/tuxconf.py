@@ -22,8 +22,8 @@ weight_log = '/home/pi/data/weight_log.txt'
 #weight_raw_path='/home/pi/tuxcap_v2/'
 weight_raw_path='/home/pi/data/weight/'
 weight_threshold = 1
-reference = -1
-#calibration_factor = 51712.18 #This isnt used anywhere?
+reference = 1
+calibration_factor = 53000.18
 weights_array_size = 10;
 
 #adc measurement

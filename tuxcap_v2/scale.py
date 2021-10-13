@@ -27,6 +27,7 @@ class scale(threading.Thread):
         self.max_weight = 5
 
         self.threshold = tc.weight_threshold
+		self.calibration_factor = tc.calibration_factor
         self.on_scale = False
         self.off_scale_count = 0
         self.num_bins = 500
@@ -51,7 +52,7 @@ class scale(threading.Thread):
         #print(self.weigh_bins)
 
     def run(self):
-
+		value = []
         while self.running:
             value[2] = value[1]
             value[1] = value[0]
@@ -156,7 +157,7 @@ class scale(threading.Thread):
 
 
     def read_scale(self):
-        return self.hx.get_weight(1)
+        return self.hx.get_weight(1)/self.calibration_factor
 
 def main(): # self-test routine
 
@@ -167,7 +168,7 @@ def main(): # self-test routine
     try:
 
         while True:
-            #print(scale_loop.read_scale())
+            print(scale_loop.read_scale())
             time.sleep(0.020)
 
     except (KeyboardInterrupt):
