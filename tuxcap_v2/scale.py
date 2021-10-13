@@ -52,7 +52,7 @@ class scale(threading.Thread):
         #print(self.weigh_bins)
 
     def run(self):
-		value = [0,0,0]
+        value = [0,0,0]
         while self.running:
             value[2] = value[1]
             value[1] = value[0]
